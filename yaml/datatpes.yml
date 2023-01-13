@@ -1,0 +1,176 @@
+# YAML earlier["Yet Another Markup Language"], now["YAML ain't Markup Language"].
+# it is strict language
+# Indentation plays an Important Role like how indentation plays in Python
+# more powerful than HTML
+# Used to store data and convert ingto JSON files.
+# very easier human readable langauage
+# yaml is case sensitive
+# yaml doesn't use the tabs
+
+
+#dataTypes
+#Strings
+#There are 3 types of way to write Strings in yaml. 
+
+# 1st method
+name : waris shaik
+
+# 2nd method
+name : "waris shaik"
+
+#3rd method
+name : 'waris shaik'
+
+#write a multiple lines of code
+
+bio:| this is waris shaik
+an CS engineer student.
+
+message:> this is
+waris shaik
+from rgmcet
+#this output will be single line
+
+
+
+# Numbers
+
+num: 8777 #this is an Integer data_Type
+marks: 94.85 #this is an float data_type
+bool: true #an boolean data_Type in other languages we write true or false for boolean data type 
+#when it comes into yaml it is far different " we use YES or No for boolean data_Type ".
+# eg:
+
+boolValue = yes
+boolvalue = no #yaml is a case sensitive and Strictly Indentation language.
+# boolvalue = false can be also written as for false is n,N,f,F,false,False,FALSE
+# for yes it is y,Y,yes,YES
+
+
+#if u want to specify data_type you can
+
+zero: !!int 45
+marks: !!float 98.45
+name: !!str waris shaik
+booleanValue: !!bool Y
+bNumber: !!int 0b001101
+oNumber: !!int 011010
+salary: !!int + 540_000000
+
+
+
+name: !!str waris shaik #hii
+age: !!int 22
+gender: !!str waris
+marks: !!float 98.45
+occupation: !!str SSDE
+salary: !!int +540_000
+not: .nan
+date: !!timestamp 2023-01-04
+
+# set pairs data type won't allow you to have duplicate keys if it has throws ERROR.
+
+pair example: !!set pairs
+ ? waris shaik
+ ? habib syed
+ ? areef omar
+ ? sameer shaik
+ ? habeeb shaik
+ ? samiulla shaik
+
+#it will be in sequence if value is not presented it gives NuLL value
+sparse : !!seq
+ - hey
+ - hii
+ -
+ - how
+ - are
+ - you
+ - i
+ - 
+ - am 
+ - fine
+
+
+ #!!omap 
+ #it is like dictionary data type 
+data: !!omap
+ - waris shaik:
+   - name: waris shaik
+   - age: 22
+   - height: 6.14
+   - occupation: UPComing SDE @Google_London
+ - habib syed:
+   - name: habib syed
+   - age: 23
+   - height: 5.4
+   - occupation: UPComing SDE @Amazon_India
+ - areef omar:
+   - name: areef omar
+   - age: 21
+   - height: 6.45
+   - occupation: UPComing SDE @Apple_Texas
+ - sameer shaik:
+   - name: sameer shaik
+   - age: 23
+   - height: 5.75
+   - occupation: UPComing SDE @TCS_India
+ - habeeb shaik:
+   - name: habeeb shaik
+   - age: 21
+   - height: 6.00
+   - occupation: UPComing SDE@ Wipro_India
+ - samiulla shaik:
+   - name: samiulla shaik
+   - age: 21
+   - height: 5.12
+   - occupation: UPComing SDE @Cognizant_India
+
+
+
+#reusing same properties with the help of Anchoir Tags:
+#this is time taking method.
+
+
+likings: 
+ fav fruit: promogranate
+ dislikes: grapes
+
+person:
+ name: waris shaik
+ fav fruit: apple
+ dislikes: banana
+person1:
+ name: habib syed
+ fav fruit: banana
+ dislikes: apple
+person2: 
+ name: areef omar
+ fav fruit: cherry
+ dislikes: guava
+person3:
+ name: sameer shaik
+ fav fruit: Apple
+ dislikes: nothing
+
+
+#intsead the above method  we can go with property &base
+#<<: *base it saves a lot of time
+#here is the example
+
+likings: &base
+ fav fruit: promogranate
+ dsilikes: nothing
+person:
+ name: waris shaik
+ <<: *base
+person1:
+ name: habib syed
+ <<: *base
+person2:
+ name: areef omar
+ <<: *base
+person3:
+ name: sameer shaik    
+ fav fruit: apple,banana,etc..
+ dislikes: nothing
