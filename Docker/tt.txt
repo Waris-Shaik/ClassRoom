@@ -1,0 +1,91 @@
+BASIC Commands:
+
+> docker version
+  it shows downloaded version and docker Engine Community
+
+> docker -v 
+  it only gives you version of Docker.
+
+> docker --version
+  also gives the same output as docker -v gives.
+
+> docker info
+  will give you whole info. perfect one to use.
+
+> docker --help
+  will give a list of commands.
+   > docker images --help
+     will show all commands regarding images.
+   > docker pull --help
+     will show all commands regarding to pull.
+
+> docker login
+> docker logout
+
+
+
+IMAGE Commands:
+
+> docker images
+  will show all images exist in your computer.
+
+> docker pull ubuntu, linux,kubernetes,microsoft
+  will download image(container).
+
+> docker rmi hash code(image id)
+  rmi: to remove images
+
+
+CONTAIERS Commands:
+
+> docker ps
+  it shows the list of cotainers that are currently running.
+
+> docker ps --all
+  it shows that list of previous successfuly runned container lists.
+
+> docker run -it hello-world
+  it first checks in local image cache if it is in. it gives output.
+  otherwise it directly goes to docker hub(like internet data base) and starts searching there.
+  if any image found. with hello-wrold name it brings from it to your local image cache and gives output.
+
+> docker run hello-world
+  hello from docker.
+
+> docker run busybox google.com 
+  it pings to google server continously untill u kill it.
+  to stop a container we can use ctrl + c.
+  but it is not the correct way to use.
+  for thi s we have command mentioned below.
+  there are two types of ways we can stop the container.
+ 	1) using stop command(SIGTERM)
+		it takes some amount of time.
+	2) using kill command (SIGKILL)
+		it stops the container immediatley (doesn't take even some minutes).
+
+> docker stop hash code(container id)
+> docker kill hash code(container id)
+
+> docker create hello-world
+  one hash code(container) id will be created.
+
+> docker start -a hash code(container)
+ -a: it shows all input eg: hello from docker.
+
+> docker start hash code(container)
+  o/p: just shows hash code not exact output.
+
+
+
+SYSTEM Commands:
+> docker stats:
+  will gives you status what is going on.
+
+> docker system df
+  will give you all the info.
+
+> docker system prune -f
+  will remove all the stopped containers. 
+
+> docker logs hash code
+  it shows how logging is going on in the container.
