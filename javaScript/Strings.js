@@ -66,3 +66,12 @@ console.log(myName.slice(0,5)); // waris
 let mName = "waris shaik";
 console.log(mName.slice(0,5)); // this returns waris as i did cut from 0-5
 console.log(mName.slice(1)); // this returns aris shaik as parameter is passed from 1 0th index skips and starts from 1th index to nth index.
+
+// template string
+
+
+let myNaame = "wari shaik";
+let myAge = 22;
+let myState = "Andhra Pradesh";
+let aboutMe = `Hii i am ${myNaame} i am ${myAge} year's old and i am from ${myState} `;
+console.log(aboutMe);
