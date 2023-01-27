@@ -6,3 +6,5 @@ the command is:  wsl --list --online
 > ls to see all directories that are available
 > cd change directory u can go into a directory where u want.
 > cd .. | cd - to go back 
+> ls -a to see all hidden files
+> ls -l to see all permission given files
