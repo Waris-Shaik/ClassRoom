@@ -8,3 +8,11 @@ the command is:  wsl --list --online
 > cd .. | cd - to go back 
 > ls -a to see all hidden files
 > ls -l to see all permission given files
+> mkdir to create directories, folders
+> touch a.txt to create files
+> cat a.txt it shows what text is present in a.txt file.
+> cat > a.txt it creates a new file 
+> history to see what commands have been executed in past.
+> rm to remove files
+> cp to copy files
+> rm to remove files
