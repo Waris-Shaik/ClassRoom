@@ -16,3 +16,7 @@ the command is:  wsl --list --online
 > rm to remove files
 > cp to copy files
 > rm to remove files
+> rmdir to remove directories
+> mkdir -p newfolder/folder/testing/selinium to create subdirectories in a directory
+> rm -r newfolder it deletes subdirectories along with parent directory
+> rm -rv newfolder it is also as same as above command
