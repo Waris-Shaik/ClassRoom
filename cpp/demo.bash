@@ -20,3 +20,4 @@ the command is:  wsl --list --online
 > mkdir -p newfolder/folder/testing/selinium to create subdirectories in a directory
 > rm -r newfolder it deletes subdirectories along with parent directory
 > rm -rv newfolder it is also as same as above command
+> find ~ -name a.txt it gives us the location of where a.txt lies
