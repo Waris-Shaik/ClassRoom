@@ -21,3 +21,9 @@ the command is:  wsl --list --online
 > rm -r newfolder it deletes subdirectories along with parent directory
 > rm -rv newfolder it is also as same as above command
 > find ~ -name a.txt it gives us the location of where a.txt lies
+> find ~ -type d -name newfolder it gives us the location of where a directorylies
+> man it describes all commands
+> man find
+> whatis ls list all contents
+> whatis what if it is not found it shows nothing appropriate
+
