@@ -48,3 +48,14 @@ the command is:  wsl --list --online
 > wc names.txt it rerurns how many number of lines of code are there 
 > wc -l names.txt it gives number of lines 
 > wc -c names.txt it gives size of file
+> sudo cat /etc/passwd
+> sudo cat /etc/shadow/
+> sudo cat /etc/group
+> default:x:1000:
+> sudo stands for superuser do
+> pam pluggable authentication module
+> sudo useradd shaik to create a user
+> sudo userdel shaik ti delete user
+> sudo hostname waris to change hostname or add.
+> sudo passwd waris
+> 
