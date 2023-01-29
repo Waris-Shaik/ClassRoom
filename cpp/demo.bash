@@ -58,4 +58,19 @@ the command is:  wsl --list --online
 > sudo userdel shaik ti delete user
 > sudo hostname waris to change hostname or add.
 > sudo passwd waris
-> 
+> chmod u-r one.txt
+> chmod u+r one.txt
+> chmod ugo-rwx one.txt
+> chmod  777 one.txt 
+> chmod 000 one.txt
+> chmod 640 one.txt
+> chmod 610 one.txt
+> 0 1 2 3 4 5 6 7
+> 0 no permission
+> 1 execute
+> 2 write
+> 3 write + execute
+> 4 read
+> 5 read + execute
+> 6 read + write
+> 7 read + write + execute
