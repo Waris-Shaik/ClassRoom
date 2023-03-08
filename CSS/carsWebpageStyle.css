@@ -1,0 +1,145 @@
+@font-face{
+    font-family:abc;
+    src:url('fonts/Amook.ttf');
+}
+
+.parent{
+    /* height:2700px; */
+    background:black;
+    opacity: 0.8;
+    width:100%;
+    border:1px solid lightgreen;
+    border-radius:0.5%;
+}
+
+
+ h2{
+    color:slateblue;
+    text-align: center;
+    font-family: abc; 
+    font-size:3em;
+    color:red;
+    text-decoration: underline;
+    background:bisque;
+    text-decoration-color: deepskyblue;
+    
+}
+
+
+img{
+    width:100%;
+    height:auto;
+
+}
+
+#pct{
+    color:red;
+    font-weight:200;
+    font-style:italic;
+    font-family: lucida sans;
+    color:greenyellow;
+    text-align: justify;
+    word-break: break-all;
+    margin:2%
+}
+
+#sct{
+    text-align:justify;
+    word-break: break-all;
+    font-family:lucida sans;
+    color:chocolate;
+    margin:2%;
+    font-weight:200;
+}
+
+
+#lct{
+    color:wheat;
+    font-weight:200;
+    font-family:lucida sans;
+    margin:2%;
+    text-align:justify;
+    word-break: break-all;
+
+}
+
+
+#info, h4{
+    color:whitesmoke;
+    margin:0px 0px 0px 7px;
+    font-family:lucida sans;
+    display: inline-block;
+}
+
+a{
+    margin:10px 0px 0px 15px;
+    font-family:lucida sans;
+    color:whitesmoke;
+    display:inline-block;
+}
+
+
+#addr{
+    float:right;
+    margin:0px 15px 0px 0px;
+
+}
+
+#country{
+    margin:10px 15px 0px 0px;
+    float:right;
+}
+
+
+
+#cell{
+    margin:15px 0px 0px 15px;
+}
+
+#state{
+    float:right;
+    margin:10px 15px 0px 0px;
+}
+
+#no{
+    margin:15px 0px 0px 15px;
+}
+
+#city{
+    float:right;
+    margin:10px 15px 0px 0px;
+}
+
+#admin{
+    float:right;
+    margin:10px 15px 0px 0px;
+}
+
+#naam{
+    float:right;
+    margin:10px 15px 0px 0px;
+    text-decoration: underline;
+    color:slateblue;
+    text-decoration-color:chartreuse;
+    cursor: pointer;
+}
+
+
+#naam::first-letter{
+    color:red;
+    font-family:'Lucida Sans';
+    font-size:2em
+}
+
+.cpr{
+    color:whitesmoke;
+    font-size: 1em;
+    font-family:verdana;
+    margin:0px 0px 0px 15px;
+    text-align: center;
+}
+
+#yr{
+    margin:1px 0px 0px 200px  ;
+    
+}
