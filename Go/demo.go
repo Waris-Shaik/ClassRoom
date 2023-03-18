@@ -1,12 +1,18 @@
 package main
 
-import "fmt"
+import "fmt" // importing
 
 
 
 // writing first Go lang prg
 
 
-func main() {
+func main() {  // starts to execute the lines
 	fmt.Println("Hello Go");
-	}
+}
+
+
+
+
+
+
