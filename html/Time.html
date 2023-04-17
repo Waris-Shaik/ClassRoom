@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Display</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Roboto:wght@300;400&display=swap');
+
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.container{
+  display: flex;
+  background: lightblue;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+
+
+
+.Time{
+  background-color: #04A66D;
+  padding: 25px;
+  border-radius:8px;
+  height:120px
+}
+
+button{
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 25px;
+}
+</style>
+<body>
+
+    
+
+  <div class="container">
+
+    <div class="Time">
+      <button id="btn">Click to display date</button>
+      <button id="cBtn">Close it</button>
+      <p id="demo"></p>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <script>
+    const Button = document.getElementById('btn');
+    const target =  document.getElementById('demo');
+
+  Button.addEventListener('click', function(){
+  let date = new Date();
+  document.getElementById('demo').innerHTML = date.toDateString();
+  document.getElementById('demo').style.display= 'block';
+  document.getElementById('demo').style.color = 'whitesmoke';
+  document.getElementById('demo').style.fontSize = '25px'
+  document.getElementById('demo').style.background = 'lightcoral';
+  document.getElementById('demo').style.textAlign = 'center';
+  document.getElementById('demo').style.fontWeight = 'bolder';
+  document.getElementById('demo').style.padding = '10px 0px';
+
+
+
+  
+
+})
+
+const CloseButton = document.getElementById('cBtn');
+
+CloseButton.addEventListener('click', function(){
+  document.getElementById('demo').style.display= 'none';
+})
+  </script>
+
+    
+</body>
+</html>
