@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperHero's_Changer_App</title>
+    <style>
+        
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Roboto:wght@300;400&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@500&display=swap');
+
+        /* font-family: 'Ysabeau SC', sans-serif; */
+
+        *{
+        font-family: 'Montserrat', sans-serif;
+        box-sizing: border-box;
+        }
+
+        body{
+        background: #141212;
+        color: white;
+        }
+
+        .container{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        height: 100vh;
+
+        }
+
+        .subContainer{
+        display: flex;
+        justify-content: center;
+        position: fixed;
+
+        }
+
+        .card{
+        width: 300px;
+        border: 1px solid;
+
+
+        }
+
+        img{
+        width: 100%;
+        height: 40vh;
+        object-fit: cover;
+        object-position: 50% 20%;
+        }
+
+        .main{
+        padding: 5px;
+        }
+        .main p {
+        margin-top:0px;
+        }
+
+        .name{
+        font-weight: bold;
+        /* font-family: 'Ysbeau SC'; */
+        letter-spacing: 2px;
+        }
+
+        .emoji{
+
+        font-weight: bold;
+        letter-spacing: 2px;
+        }
+
+        .titleInfo{
+        height: 28px;
+        }
+
+
+        .menuBar{
+        margin-top: 0px;
+        color: white;
+        margin:5px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 25px;
+        margin-bottom: 5px;
+        }
+
+        .menuBar button{
+        width:55px;
+        border: 2px solid;
+        font-size: 25px;
+        margin:5px 0px;
+        display: flex;
+        justify-content: center;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 0px;
+        background: slateblue;
+        color:white;
+
+        }
+
+
+        .nextSlide, .previousSlide{
+        margin:0px 15px;
+        }
+
+        .gifSubContainer{
+        margin-top:10%;
+        width:250px;
+        height: 150px;
+        /* border: 2px solid black; */
+        border-radius:12px;
+        background: gray;
+
+        }
+
+        .gender,.race{
+        font-weight: bold
+        }
+    </style>
+</head>
+<body>
+
+    
+<div class="container">
+    <div class="subContainer">
+      <div class="card">
+        <img src="./gifs/ezgif.com-video-to-gif.gif" alt="" class="image">
+        <div class="main">
+        <p class = 'titleInfo' ><span class="name"></span>  </p> 
+        <p><span class = 'power' >power : <span class="emoji"></span> </span></p>
+        <p class = 'identity'>gender : <span class="gender"></span></p>
+        <p class="Race">race : <span class = 'race'></span></p>
+        </div>
+        <div class="menuBar">
+          <!-- <p class="previousSlide">&#8592;</p> -->
+          <button class="previousSlide">&#8592;</button>
+          <button class="nextSlide">&#8594;</button>
+          <!-- <p class="nextSlide" >&#8594;</p> -->
+        </div>
+      </div>
+    </div>
+    </div> 
+
+    <script>
+        const target = document.querySelector('.image');
+        const Name = document.querySelector('.name');
+        const emoji = document.querySelector('.emoji');
+        const identity = document.querySelector('.gender');
+        const race = document.querySelector('.race');
+        const nextSlide = document.querySelector('.nextSlide');
+        const previousSlide = document.querySelector('.previousSlide');
+        emoji.innerText = 'null'
+        identity.innerText = 'null'
+        race.innerText = 'null'
+
+
+        const SUPER_HERO_TOKEN = 106080702538087;
+        const BASE_URL = `https://superheroapi.com/api.php/${SUPER_HERO_TOKEN}`
+        const getSuperHero = (id) =>{
+            fetch(`${BASE_URL} / ${id}`)
+            .then(response => response.json())
+            .then(data =>{
+                target.src = data.image.url;
+                Name.innerText = data.name;
+                emoji.innerText = `${data.powerstats.power}`
+                identity.innerText = data.appearance.gender;
+                race.innerText = data.appearance.race;
+                identity.style.fontWeight = 'bold';
+                identity.style.letterSpacing = '1px'
+                race.style.fontWeight = 'bold';
+                race.style.letterSpacing = '1px'
+                console.log(data); 
+        
+            })
+        }
+
+        // target.src = ''
+        let id = 0;
+        nextSlide.addEventListener('click', ()=>{
+            id = id + 1;
+            getSuperHero(id)
+        })
+
+        previousSlide.addEventListener('click', ()=>{
+            id = id - 1;
+            getSuperHero(id)
+        })
+    </script>
+    
+</body>
+</html>
