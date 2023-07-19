@@ -1,0 +1,16 @@
+class Program{
+  static void Main(string[] args){
+    
+   int num = 8777;
+   int count = 0;
+
+   while(num >= 1){
+	
+	num = num / 10;
+	count++;
+
+	}
+
+	Console.WriteLine(count);
+   }
+}
