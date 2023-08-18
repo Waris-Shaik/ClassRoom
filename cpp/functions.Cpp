@@ -54,6 +54,21 @@ void reverseArray(int arr[], int size){
         cout << arr[i] << " ";    
     }
 }
+void alterNativeReverse(int arr[], int size){
+    // arr[] = {2,3,4,5,9,10}; 
+   
+   for(int i=0; i<size; i+=2){
+    // swapping
+       int temp = arr[i];
+       arr[i] = arr[i+1];
+       arr[i+1] = temp;
+   } 
+   
+   // printing
+    for(int i=0; i<size; i++){  
+        cout << arr[i] << " ";    
+    }
+}
 int main(){
     
     
@@ -73,6 +88,9 @@ int main(){
     // cout << linearSearch(array, 10, 5);
     // int arr[12] = {2,3,4,5,9,10}; 
     // reverseArray(arr,6);
+    int arr[12] = {2,3,4,5,9,10,12,7}; 
+    alterNativeReverse(arr,8);
+    
     
     
     return 0;
