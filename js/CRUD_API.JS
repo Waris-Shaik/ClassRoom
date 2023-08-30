@@ -1,16 +1,14 @@
 const express = require('express');
 const server = express();
-
 const fs = require('fs');
 const data = JSON.parse(fs.readFileSync('data.json', 'utf-8'));
 const products = data.products;
 const PORT = process.env.PORT || 8000;
-const path = require('path');
+
+
 
 server.use(express.json());
-
 var count = 1;
-
 const auth = (req, res, next)=>{
     if(req.query.password == '123'){
         next();
@@ -28,9 +26,6 @@ const auth = (req, res, next)=>{
         }
         count ++;
 
-        // if(count === 5){ 
-        //     count = 1;
-        // }
         
         console.log(count);
         
@@ -38,56 +33,71 @@ const auth = (req, res, next)=>{
 }  
  
 
-server.get('/products', (req, res)=>{
-    res.json(products)
-})
 
 
-
-// CREATE
-server.post('/products',(req, res)=>{
+// CREATE Product
+const createProduct = (req, res)=>{
     console.log(req.body);
     products.push(req.body);
     res.status(201).json();
-})
+}
+
+// GET Products
+const getAllProducts = (req, res)=>{
+    res.json(products)
+}
+
 
 // READ GET /products
 server.get('/',auth, (req, res)=>{
     res.status(201).json({message: 'Success'});
 })
 
+
 // READ  GET /products:/ID
-server.get('/products/:id', (req, res)=>{
+const getProductById = (req, res)=>{
     const id = +req.params.id;
     const product = products.find((prd)=> prd.id === id);
     res.json(product);
-})
+}
+
 
  // UPDATE PUT /products:/ID
-server.put('/products/:id', (req, res)=>{
-    const id = Number(req.params.id);
-    const productIndex = products.findIndex((prd)=> prd.id === id);
-    products.splice(productIndex,1,{...req.body, id:id})
-    res.status(201).json()
-}) 
-
- // UPDATE PUT /products:/ID
-server.patch('/products/:id', (req, res)=>{
+const updateProduct = (req, res)=>{
     const id = Number(req.params.id);
     const productIndex = products.findIndex((prd)=> prd.id === id);
     const product = products[productIndex];
     products.splice(productIndex,1,{...product, ...req.body})
     res.status(201).json()
-})
+}
+
+
+ // Replace PUT /products:/ID
+ const replaceProduct = (req, res)=>{
+    const id = Number(req.params.id);
+    const productIndex = products.findIndex((prd)=> prd.id === id);
+    products.splice(productIndex,1,{...req.body, id:id})
+    res.status(201).json()
+}
 
 // DELETE DELETE /products:/ID
-server.delete('/products/:id',(req, res)=>{
+const deleteProduct = (req, res)=>{
     const id = Number(req.params.id);
     const productIndex = products.findIndex((prd)=> prd.id === id);
     const product = products[productIndex];
     products.splice(productIndex, 1);
     res.status(201).json(product);
-})
+}
+
+
+
+
+server.get('/products', getAllProducts);
+server.post('/products', createProduct);
+server.get('/products/:id', getProductById);
+server.patch('/products/:id', updateProduct);
+server.put('/products/:id', replaceProduct);  
+server.delete('/products/:id', deleteProduct);
 
 
 
